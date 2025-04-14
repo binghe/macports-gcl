@@ -44,11 +44,7 @@ conflicts_build-append \
 # checking for required object alignment... configure: error: Cannot find object alignent
 universal_variant   no
 
-configure.args      --disable-notify \
-                    --disable-statsysbfd \
-                    --enable-custreloc \
-                    --enable-emacsdir=${prefix}/share/emacs/site-lisp/gcl27 \
-                    --enable-infodir=${prefix}/share/info \
+configure.args      --enable-infodir=${prefix}/share/info \
                     --enable-readline \
                     --without-x \
                     --disable-xgcl
