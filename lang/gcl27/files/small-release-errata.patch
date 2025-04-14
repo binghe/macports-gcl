@@ -1,26 +1,14 @@
-Greetings!  While these tiny issues will likely not affect many if any,
-there are alas a few tiny errata with the 2.7.1 tarball release.  Posted
-here just for those interested.  Will of course be incorporated in the
-next release.
-
-=============================================================================
-modified   gcl/debian/rules
-@@ -138,7 +138,7 @@ clean: debian/control debian/gcl.templates
- 	rm -rf $(INS) debian/substvars debian.upstream
- 	rm -rf *stamp build-indep
- 	rm -f  debian/elpa-gcl$(EXT).elpa debian/gcl$(EXT)-pkg.el
--	rm -rf $(EXT_TARGS) info/gcl$(EXT)*.info*
-+	rm -rf $(EXT_TARGS) info/gcl$(EXT)*.info* gcl_pool
- 
- debian-clean: debian/control debian/gcl.templates
- 	dh_testdir
-modified   gcl/git.tag
+diff -ur gcl-2.7.1.orig/git.tag gcl-2.7.1/git.tag
+--- gcl-2.7.1.orig/git.tag	2025-04-11 11:38:16.000000000 +1000
++++ gcl-2.7.1/git.tag	2025-04-14 17:09:24.000000000 +1000
 @@ -1,2 +1,2 @@
 -"Version_2_7_0"
 +"Version_2_7_1"
  
-modified   gcl/o/alloc.c
-@@ -707,6 +707,7 @@ empty_relblock(void) {
+diff -ur gcl-2.7.1.orig/o/alloc.c gcl-2.7.1/o/alloc.c
+--- gcl-2.7.1.orig/o/alloc.c	2025-04-11 10:57:51.000000000 +1000
++++ gcl-2.7.1/o/alloc.c	2025-04-14 17:09:49.000000000 +1000
+@@ -707,6 +707,7 @@
    for (;!rb_emptyp();) {
      tm_table[t_relocatable].tm_adjgbccnt--;
      expand_contblock_index_space();
@@ -28,10 +16,3 @@ modified   gcl/o/alloc.c
      GBC(t_relocatable);
    }
    sSAleaf_collection_thresholdA->s.s_dbind=o;
-=============================================================================
-
-Take care,
--- 
-Camm Maguire			     		    camm@maguirefamily.org
-==========================================================================
-"The earth is but one country, and mankind its citizens."  --  Baha'u'llah

@@ -3,7 +3,7 @@
 PortSystem          1.0
 PortGroup           conflicts_build 1.0
 
-name                gcl
+name                gcl27
 version             2.7.1
 revision            1
 categories          lang
@@ -26,14 +26,16 @@ depends_lib         port:gettext \
                     port:gmp \
                     port:readline
 
-master_sites        gnu
+master_sites        gnu:gcl
+distname            gcl-${version}
 
 extract.rename      yes
 
-checksums           rmd160  d64bb58a38ce45d6c4cf67cec4dff1dc52197a55 \
-                    sha256  09f3417c512aa1733a638809d3a63ac290eeb9448be82795f5b6681bd307345a \
-                    size    11725385
+checksums           rmd160  7625272edd08ef52ec6f375b9a669c023f65460b \
+                    sha256  79d0bb65b82df81c078bc55c4cda3fe4d766d87e3bfe10fde0b2f728204e1015 \
+                    size    4428839
 
+patch.pre_args      -p1
 patchfiles          small-release-errata.patch
 
 conflicts_build-append \
@@ -45,7 +47,7 @@ universal_variant   no
 configure.args      --disable-notify \
                     --disable-statsysbfd \
                     --enable-custreloc \
-                    --enable-emacsdir=${prefix}/share/emacs/site-lisp/gcl \
+                    --enable-emacsdir=${prefix}/share/emacs/site-lisp/gcl27 \
                     --enable-infodir=${prefix}/share/info \
                     --enable-readline \
                     --without-x \
