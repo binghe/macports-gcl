@@ -5,7 +5,7 @@ PortGroup           conflicts_build 1.0
 
 name                gcl27
 version             2.7.1
-revision            1
+revision            0
 categories          lang
 license             GPL-2+
 maintainers         nomaintainer
@@ -24,8 +24,7 @@ supported_archs     x86_64
 
 depends_lib         port:gettext \
                     port:gmp \
-                    port:readline \
-                    port:binutils
+                    port:readline
 
 master_sites        gnu:gcl
 distname            gcl-${version}
@@ -38,7 +37,8 @@ checksums           rmd160  7625272edd08ef52ec6f375b9a669c023f65460b \
 
 patch.pre_args      -p1
 patchfiles          upstream-small-release-errata.patch \
-                    section_64.patch binutils.patch
+                    section_64.patch \
+                    binutils.patch
 
 conflicts_build-append \
                     ${name}
