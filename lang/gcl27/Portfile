@@ -40,7 +40,7 @@ checksums           rmd160  7625272edd08ef52ec6f375b9a669c023f65460b \
                     size    4428839
 
 patch.pre_args      -p2
-patchfiles          upstream-patches-upto-d9545f1b.diff
+patchfiles          upstream-patches-upto-4541a267.diff
 
 conflicts_build-append \
                     ${name}
